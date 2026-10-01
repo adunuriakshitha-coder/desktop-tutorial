@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin Dashboard</title><link rel="stylesheet" href="/static/css/style.css"></head><body><nav class="navbar"><a class="logo" href="/">&#10010; CityCare Hospital</a><input type="checkbox" id="menu"><label for="menu" class="burger">&#9776;</label><ul><li><a href="/#home">Home</a></li><li><a href="/#about">About</a></li><li><a href="/doctors">Doctors</a></li><li><a href="/#services">Services</a></li><li><a href="/appointment">Book Appointment</a></li><li><a href="/admin">Patient Records</a></li><li><a href="/#contact">Contact</a></li><li><a href="/admin">Admin</a></li></ul></nav>
+<section class="section"><h2>Admin Dashboard</h2>
+<div class="stats small"><div><b>{{ stats.total }}</b>Total Appointments</div><div><b>{{ stats.today }}</b>Today's Appointments</div><div><b>{{ stats.pending }}</b>Pending</div><div><b>{{ stats.completed }}</b>Completed</div></div>
+<div class="tablewrap"><table><thead><tr><th>Appointment ID</th><th>Patient Name</th><th>Doctor</th><th>Department</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr></thead><tbody>
+{% for a in appointments %}<tr><td>{{ a.id }}</td><td>{{ a.patient_name }}</td><td>{{ a.doctor }}</td><td>{{ a.department }}</td><td>{{ a.appointment_date }}</td><td>{{ a.appointment_time }}</td><td><span class="badge {{ a.status }}">{{ a.status }}</span></td>
+<td class="actions">{% for s, label in [('Confirmed','Confirm'),('Completed','Complete'),('Cancelled','Cancel')] %}<form method="post" action="/admin/status/{{ a.id }}/{{ s }}"><button class="mini {{ s }}">{{ label }}</button></form>{% endfor %}</td></tr>
+{% else %}<tr><td colspan="8">No appointments yet. Book one from the Appointment page.</td></tr>{% endfor %}
+</tbody></table></div></section>
+<footer>&copy; 2026 CityCare Hospital | College Mini Project</footer></body></html>

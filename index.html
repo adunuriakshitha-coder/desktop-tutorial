@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CityCare Hospital</title><link rel="stylesheet" href="/static/css/style.css"></head><body><nav class="navbar"><a class="logo" href="/">&#10010; CityCare Hospital</a><input type="checkbox" id="menu"><label for="menu" class="burger">&#9776;</label><ul><li><a href="/#home">Home</a></li><li><a href="/#about">About</a></li><li><a href="/doctors">Doctors</a></li><li><a href="/#services">Services</a></li><li><a href="/appointment">Book Appointment</a></li><li><a href="/admin">Patient Records</a></li><li><a href="/#contact">Contact</a></li><li><a href="/admin">Admin</a></li></ul></nav>
+<header class="hero" id="home"><div><h1>&#10010; CityCare Hospital</h1><p>Caring for your health with experienced doctors, modern facilities and 24/7 emergency support.</p><a class="btn" href="/appointment">Book Appointment</a> <a class="btn btn-light" href="/doctors">View Doctors</a><p class="emergency">&#128222; Emergency: <b>108 / +91 98765 43210</b></p></div></header>
+<section class="stats"><div><b>50+</b>Experienced Doctors</div><div><b>25,000+</b>Patients Served</div><div><b>12</b>Departments</div><div><b>24/7</b>Emergency Support</div></section>
+<section id="about" class="section"><h2>About Hospital</h2><p class="sub">CityCare Hospital has provided quality, affordable healthcare for over 20 years.</p><div class="grid">
+<div class="card"><h3>Mission</h3><p>To give safe, compassionate and affordable care to every patient.</p></div>
+<div class="card"><h3>Vision</h3><p>To be the most trusted hospital in the region.</p></div>
+<div class="card"><h3>Experienced Medical Staff</h3><p>Skilled doctors, nurses and technicians who put patients first.</p></div>
+<div class="card"><h3>Modern Facilities</h3><p>Advanced labs, ICU, operation theatres and a 24-hour pharmacy.</p></div></div></section>
+<section class="section alt"><h2>Our Doctors</h2><div class="grid">{% for d in doctors %}<div class="card doctor"><div class="avatar">&#128100;</div><h3>{{ d.name }}</h3><p class="tag">{{ d.dept }}</p><p>Experience: {{ d.exp }} years</p><p>Days: {{ d.days }}</p><p>Time: {{ d.time }}</p><a class="btn" href="/appointment?doctor={{ d.name }}">Book Appointment</a></div>{% endfor %}</div></section>
+<section id="services" class="section"><h2>Our Services</h2><div class="grid">
+<div class="card"><div class="icon">&#129658;</div><h3>General Consultation</h3><p>Expert advice for everyday health problems.</p></div>
+<div class="card"><div class="icon">&#10084;&#65039;</div><h3>Cardiology</h3><p>Heart checkups, ECG and treatment.</p></div>
+<div class="card"><div class="icon">&#128657;</div><h3>Emergency Care</h3><p>Round-the-clock emergency and ambulance.</p></div>
+<div class="card"><div class="icon">&#129514;</div><h3>Laboratory Services</h3><p>Accurate blood tests and diagnostics.</p></div>
+<div class="card"><div class="icon">&#128138;</div><h3>Pharmacy</h3><p>Genuine medicines available 24 hours.</p></div>
+<div class="card"><div class="icon">&#128203;</div><h3>Health Checkup</h3><p>Full-body checkup packages.</p></div></div></section>
+<section id="contact" class="section alt"><h2>Contact Us</h2><div class="card contact"><p>&#128205; 12 Health Street, Your City</p><p>&#128222; +91 98765 43210</p><p>&#9993;&#65039; info@citycare.example</p><p>&#128337; Open 24 hours, all days</p></div></section>
+<footer>&copy; 2026 CityCare Hospital | College Mini Project</footer><script src="/static/js/script.js"></script></body></html>

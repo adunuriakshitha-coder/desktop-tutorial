@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Book Appointment</title><link rel="stylesheet" href="/static/css/style.css"></head><body><nav class="navbar"><a class="logo" href="/">&#10010; CityCare Hospital</a><input type="checkbox" id="menu"><label for="menu" class="burger">&#9776;</label><ul><li><a href="/#home">Home</a></li><li><a href="/#about">About</a></li><li><a href="/doctors">Doctors</a></li><li><a href="/#services">Services</a></li><li><a href="/appointment">Book Appointment</a></li><li><a href="/admin">Patient Records</a></li><li><a href="/#contact">Contact</a></li><li><a href="/admin">Admin</a></li></ul></nav>
+<section class="section"><h2>Book Appointment</h2>
+<div id="success" class="success" hidden></div>
+<form id="apptForm" class="card form" novalidate>
+<label>Patient Name<input type="text" id="patient_name"></label>
+<label>Age<input type="number" id="age"></label>
+<label>Gender<select id="gender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></label>
+<label>Phone Number<input type="tel" id="phone" placeholder="10 digits"></label>
+<label>Email<input type="email" id="email"></label>
+<label>Department<select id="department"><option value="">Select department</option></select></label>
+<label>Doctor<select id="doctor"><option value="">Select doctor</option></select></label>
+<label>Appointment Date<input type="date" id="appointment_date" min="{{ today }}"></label>
+<label>Appointment Time<select id="appointment_time"><option value="">Select time</option><option>09:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>02:00 PM</option><option>03:00 PM</option><option>04:00 PM</option><option>05:00 PM</option></select></label>
+<label class="full">Symptoms / Health Problem<textarea id="symptoms" rows="3"></textarea></label>
+<p id="error" class="error full"></p>
+<button class="btn full" type="submit">Book Appointment</button></form></section>
+<script>const DOCTORS = {{ doctors|tojson }};</script>
+<footer>&copy; 2026 CityCare Hospital | College Mini Project</footer><script src="/static/js/script.js"></script></body></html>
